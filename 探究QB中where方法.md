@@ -7,6 +7,7 @@ Yii的Query Builder提供了一种面向对象的方式去写SQL语句。它允�
 ### 源码分析
 
 先贴出源码：
+
 ```php
 <?php
 // ......
@@ -18,6 +19,7 @@ public function where($conditions, $params = array())
     return $this;
 }
 ```
+
 该方法所在类别名：```system.db.CDbCommand```。方法接受两个参数，第一个为```$conditions```，mixed数据类型，通过该入参，生成SQL的where部分；第二个为```$params```，array数据类型，作为查询绑定的参数。
 
 代码较简单，依次做下面三件事儿：
@@ -27,6 +29,7 @@ public function where($conditions, $params = array())
 3. 返回```CDbCommand```实体对象。
 
 下面我们重点看看处理条件方法```processConditions```的实现：
+
 ```php
 <?php
 // ......
@@ -90,6 +93,7 @@ private function processConditions($conditions)
     throw new CDbException(Yii::t('yii', 'Unknown operator "{operator}".', array('{operator}' => $operator)));
 }
 ```
+
 该方法会以字符串的形式返回SQL的where部分，否则抛出未知operator的异常。我们走读下代码：
 
 1. 如果```$conditions```为字符串，则直接返回；如果```$conditions```为空数组，则返回空字符串；
@@ -117,6 +121,7 @@ public function actionQb()
         ->queryRow();
 }
 ```
+
 将外部参数title和字段直接拼接传给了where，形成了一个SQL注入漏洞。
 
 ![SQLI](http://m.tuniucdn.com/fb2/t1/G1/M00/3B/EA/Cii9EFd13c2ILgOUAAOfXoS81XIAAG2ZgGhQIcAA592928.png)
