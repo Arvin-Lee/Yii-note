@@ -55,13 +55,13 @@ public function actionDao()
 }
 ```
 
-** 调试信息 **
+**调试信息**
 
 ![DAO](http://m.tuniucdn.com/fb2/t1/G2/M00/16/A3/Cii-TleY1VOIHXoJAAH1DvrZy2AAAAhQgLFBWgAAfUm004.png)
 
 #### 2. Query Builder
 
-** 代码 **
+**代码**
 
 ```php
 <?php
@@ -76,13 +76,13 @@ public function actionQb()
         ->queryAll();
 }
 ```
-** 调试信息 **
+**调试信息**
 
 ![QB](http://m.tuniucdn.com/fb2/t1/G2/M00/16/A3/Cii-TFeY1YKIDrRAAAIm0e9WJ_8AAAhQgMBXlUAAibp061.png)
 
 #### 3. Active Record
 
-** 代码 **
+**代码**
 
 ```php
 <?php
@@ -94,6 +94,6 @@ public function actionAr()
 }
 ```
 
-** 调试信息 **
+**调试信息**
 
 ![AR](http://m.tuniucdn.com/fb2/t1/G2/M00/16/A3/Cii-T1eY1amIVtVfAAK6qMwdcIgAAAhQgMHynAAArrA245.png)
